@@ -16,4 +16,4 @@ export const Container = styled.button`
     cursor: pointer;
     opacity: 0.8;
   }
-`
+`;

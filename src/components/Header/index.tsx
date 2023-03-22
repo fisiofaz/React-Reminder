@@ -9,9 +9,11 @@ export function Header() {
   function increment() {
     setNumber(number + 1);
   }
-  return <Container>
-    <img src= {RRLogo} alt="React Reminder Logo" />
-    <p>{number}</p>
-    <Button title="Adicionar Lembrete" onClick= {increment} />
-  </Container>;  
+  return (
+    <Container>
+      <img src= {RRLogo} alt="React Reminder Logo" />
+      <p>{number}</p>
+      <Button title="Adicionar Lembrete" onClick= {increment} />
+    </Container>
+  ); 
 }

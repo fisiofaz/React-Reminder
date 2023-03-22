@@ -14,4 +14,8 @@ export const Container = styled.header`
   > img {
     height: 2.5rem;
   }
-`
+
+  > p {
+    color: var(--font-white)
+  }
+`;
