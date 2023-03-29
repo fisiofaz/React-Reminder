@@ -1,19 +1,26 @@
-import RRLogo from "../../assets/images/RRLogo.png"
+import {Logo} from "../Logo"
 import { Container } from "./styles";
 import { Button } from "../Button";
 import { useState } from "react";
+import { NewStickyModal } from "../NewStickyModal";
 
 
 export function Header() {
-  const [number, setNumber] = useState(0);
-  function increment() {
-    setNumber(number + 1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  function handleOpenModal() {
+    setIsModalOpen(true);
   }
+  
+  function handleCloseModal() {
+    setIsModalOpen(false);
+  }
+
   return (
     <Container>
-      <img src= {RRLogo} alt="React Reminder Logo" />
-      <p>{number}</p>
-      <Button title="Adicionar Lembrete" onClick= {increment} />
+      <Logo />
+      <Button title="Adicionar Lembrete" onClick={() => handleOpenModal} />
+      <NewStickyModal isOpen={isModalOpen} onRequestClose={handleCloseModal} />
     </Container>
-  ); 
+  )
 }
